@@ -1,9 +1,10 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <section class="cart-show">
 
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+  <% if enhanced_cart.present? %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +49,9 @@
       <% end %>
     </div>
   </div>
-
+      <% else %>
+      <h2> Your cart is empty.</h2>
+      <button onclick="location.href='/'" class="alert alert-info" type="button">
+         Back to Home page</button>
+      <% end %>
 </section>
