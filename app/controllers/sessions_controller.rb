@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     cleanEmail = params[:email].strip
     userPassword = params[:password]
-    user = User.authentication(cleanEmail, userPassword)
+    user = User.authenticate_with_credentials(cleanEmail, userPassword)
     if user
       session[:user_id] = user.id
       redirect_to '/'
