@@ -46,7 +46,12 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'dotenv-rails'
 end
-
+gem 'phantomjs', :require => 'phantomjs/poltergeist'
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -60,8 +65,3 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :test do 
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'database_cleaner'
-end
