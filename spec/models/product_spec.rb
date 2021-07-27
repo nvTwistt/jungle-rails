@@ -9,7 +9,7 @@ RSpec.describe Product, type: :model do
         name: "Nunchucks",
         price: 500.00,
         quantity: 1,
-        category_id: category.id
+        category: category
         )
       expect(product).to be_present
     end
@@ -46,7 +46,7 @@ RSpec.describe Product, type: :model do
         )
       expect(quantity.errors.full_messages).to include "Quantity can't be blank"
     end
-    
+
     it 'shouldn\'t save with an invalid price' do
       category = Category.create(name: "Toys")
       price = Product.create(
